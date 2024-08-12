@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms Ashamoni Telecom || Banknote Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('dbbltwo.jpg') no-repeat center center/cover;
+        }
+        .container {
+            width: 450px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #444;
+            font-size: 26px;
+            font-weight: 600;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        label {
+            flex: 1;
+            margin-right: 10px;
+            font-weight: 500;
+            color: #333;
+        }
+        input[type="number"] {
+            width: 80px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: right;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px;
+            background: #28a745;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .result {
+            font-size: 22px;
+            text-align: right;
+            color: #333;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Ms Ashamoni Telecom || BankNote Calculator</h2>
+    <div class="input-group">
+        <label for="tenTaka">10 Taka Notes:</label>
+        <input type="number" id="tenTaka" value="0">
+    </div>
+    <div class="input-group">
+        <label for="twentyTaka">20 Taka Notes:</label>
+        <input type="number" id="twentyTaka" value="0">
+    </div>
+    <div class="input-group">
+        <label for="fiftyTaka">50 Taka Notes:</label>
+        <input type="number" id="fiftyTaka" value="0">
+    </div>
+    <div class="input-group">
+        <label for="hundredTaka">100 Taka Notes:</label>
+        <input type="number" id="hundredTaka" value="0">
+    </div>
+    <div class="input-group">
+        <label for="twoHundredTaka">200 Taka Notes:</label>
+        <input type="number" id="twoHundredTaka" value="0">
+    </div>
+    <div class="input-group">
+        <label for="fiveHundredTaka">500 Taka Notes:</label>
+        <input type="number" id="fiveHundredTaka" value="0">
+    </div>
+    <div class="input-group">
+        <label for="thousandTaka">1000 Taka Notes:</label>
+        <input type="number" id="thousandTaka" value="0">
+    </div>
+    <button onclick="calculateTotal()">Calculate Total</button>
+    <div class="result" id="result">Total: 0 Taka</div>
+</div>
+
+<script>
+    function calculateTotal() {
+        // Get the input values
+        var tenTaka = document.getElementById('tenTaka').value;
+        var twentyTaka = document.getElementById('twentyTaka').value;
+        var fiftyTaka = document.getElementById('fiftyTaka').value;
+        var hundredTaka = document.getElementById('hundredTaka').value;
+        var twoHundredTaka = document.getElementById('twoHundredTaka').value;
+        var fiveHundredTaka = document.getElementById('fiveHundredTaka').value;
+        var thousandTaka = document.getElementById('thousandTaka').value;
+
+        // Calculate the total sum
+        var totalSum = (tenTaka * 10) + (twentyTaka * 20) + (fiftyTaka * 50) +
+                       (hundredTaka * 100) + (twoHundredTaka * 200) + 
+                       (fiveHundredTaka * 500) + (thousandTaka * 1000);
+
+        // Display the result
+        document.getElementById('result').innerText = "Total: " + totalSum + " Taka";
+    }
+</script>
+
+</body>
+</html>
