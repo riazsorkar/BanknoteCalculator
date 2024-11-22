@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url('dbbltwo.jpg') no-repeat center center/cover;
+            background: url('https://www.dutchbanglabank.com/img/poster/videoimg62.jpg') no-repeat center center/cover;
         }
+        .grid{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            margin: 20px;
+        }
+
         .container {
             width: 450px;
             background: rgba(255, 255, 255, 0.9);
@@ -25,6 +35,8 @@
             flex-direction: column;
             justify-content: space-between;
         }
+
+
         h2 {
             text-align: center;
             margin-bottom: 30px;
@@ -32,27 +44,32 @@
             font-size: 26px;
             font-weight: 600;
         }
+
         .input-group {
             margin-bottom: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         label {
             flex: 1;
             margin-right: 10px;
             font-weight: 500;
             color: #333;
         }
+
         input[type="number"] {
-            width: 80px;
+            width: 150px;
             padding: 10px;
             box-sizing: border-box;
             text-align: right;
             border-radius: 6px;
-            border: 1px solid #ccc;
+            border: 1px solid #2b2929;
             font-size: 16px;
+            font-weight: 700;
         }
+
         button {
             padding: 12px;
             background: #28a745;
@@ -64,74 +81,101 @@
             margin-top: 20px;
             transition: background 0.3s ease;
         }
+
         button:hover {
             background: #218838;
         }
+
         .result {
-            font-size: 22px;
-            text-align: right;
-            color: #333;
+            font-size: 30px;
+            text-align: center;
+            color: #3607a4;
             margin-top: 20px;
-            font-weight: 600;
+            font-weight: 800;
+        }
+        .dayname{
+            height: 40px;
+            background-color: rgb(209 204 142);
+            border-radius: 7px ;
+            font-size: 25px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h2>Ms Ashamoni Telecom || BankNote Calculator</h2>
-    <div class="input-group">
-        <label for="tenTaka">10 Taka Notes:</label>
-        <input type="number" id="tenTaka" value="0">
-    </div>
-    <div class="input-group">
-        <label for="twentyTaka">20 Taka Notes:</label>
-        <input type="number" id="twentyTaka" value="0">
-    </div>
-    <div class="input-group">
-        <label for="fiftyTaka">50 Taka Notes:</label>
-        <input type="number" id="fiftyTaka" value="0">
-    </div>
-    <div class="input-group">
-        <label for="hundredTaka">100 Taka Notes:</label>
-        <input type="number" id="hundredTaka" value="0">
-    </div>
-    <div class="input-group">
-        <label for="twoHundredTaka">200 Taka Notes:</label>
-        <input type="number" id="twoHundredTaka" value="0">
-    </div>
-    <div class="input-group">
-        <label for="fiveHundredTaka">500 Taka Notes:</label>
-        <input type="number" id="fiveHundredTaka" value="0">
-    </div>
-    <div class="input-group">
-        <label for="thousandTaka">1000 Taka Notes:</label>
-        <input type="number" id="thousandTaka" value="0">
-    </div>
-    <button onclick="calculateTotal()">Calculate Total</button>
-    <div class="result" id="result">Total: 0 Taka</div>
-</div>
+    <div class="grid">
+        <div class="container">
+            <div class="result" id="result">Total: 0 </div>
+            <button class="clear-button" style="background-color: rgb(234, 48, 48);" onclick="refresh()">Clear</button>
 
-<script>
-    function calculateTotal() {
-        // Get the input values
-        var tenTaka = document.getElementById('tenTaka').value;
-        var twentyTaka = document.getElementById('twentyTaka').value;
-        var fiftyTaka = document.getElementById('fiftyTaka').value;
-        var hundredTaka = document.getElementById('hundredTaka').value;
-        var twoHundredTaka = document.getElementById('twoHundredTaka').value;
-        var fiveHundredTaka = document.getElementById('fiveHundredTaka').value;
-        var thousandTaka = document.getElementById('thousandTaka').value;
+            <h2></h2>
+            <div class="input-group">
+                <label for="tenTaka"><div class="dayname">10</div></label>
+                <input type="number" id="tenTaka" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label for="twentyTaka"><div class="dayname">20</div></label>
+                <input type="number" id="twentyTaka" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label for="fiftyTaka"><div class="dayname">50</div></label>
+                <input type="number" id="fiftyTaka" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label for="hundredTaka"><div class="dayname">100</div></label>
+                <input type="number" id="hundredTaka" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label for="twoHundredTaka"><div class="dayname">200</div></label>
+                <input type="number" id="twoHundredTaka" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label for="fiveHundredTaka"><div class="dayname">500</div></label>
+                <input type="number" id="fiveHundredTaka" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label for="thousandTaka"><div class="dayname">1000</div></label>
+                <input type="number" id="thousandTaka" placeholder="0">
+            </div>
+            <button onclick="calculateTotal()">Calculate Total</button>
+            
+            
+    
+        </div>
+    </div>
 
-        // Calculate the total sum
-        var totalSum = (tenTaka * 10) + (twentyTaka * 20) + (fiftyTaka * 50) +
-                       (hundredTaka * 100) + (twoHundredTaka * 200) + 
-                       (fiveHundredTaka * 500) + (thousandTaka * 1000);
+    <script>
+        function calculateTotal() {
+            // Get the input values
+            var tenTaka = document.getElementById('tenTaka').value;
+            var twentyTaka = document.getElementById('twentyTaka').value;
+            var fiftyTaka = document.getElementById('fiftyTaka').value;
+            var hundredTaka = document.getElementById('hundredTaka').value;
+            var twoHundredTaka = document.getElementById('twoHundredTaka').value;
+            var fiveHundredTaka = document.getElementById('fiveHundredTaka').value;
+            var thousandTaka = document.getElementById('thousandTaka').value;
 
-        // Display the result
-        document.getElementById('result').innerText = "Total: " + totalSum + " Taka";
-    }
-</script>
+            // Calculate the total sum
+            var totalSum = (tenTaka * 10) + (twentyTaka * 20) + (fiftyTaka * 50) +
+                (hundredTaka * 100) + (twoHundredTaka * 200) +
+                (fiveHundredTaka * 500) + (thousandTaka * 1000);
+
+            // Display the result
+            document.getElementById('result').innerText = "Total: " + totalSum;
+        }
+        function refresh() {
+
+            setTimeout(function () {
+                location.reload()
+            }, 100);
+        }
+    </script>
 
 </body>
+
 </html>
